@@ -85,8 +85,6 @@ func start_game():
 	if $Panel/TabContainer/Nyoom/Panel/NicknameLineEdit.text != "":
 		args.append("+name")
 		args.append($Panel/TabContainer/Nyoom/Panel/NicknameLineEdit.text)
-	if $Panel/TabContainer/Nyoom/Panel/DLCheck.pressed:
-		args.append("-nodownload")
 	match $Panel/TabContainer/Settings/DisplayPanel/RenderOptions.selected:
 		0:
 			args.append("-software")

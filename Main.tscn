@@ -164,22 +164,10 @@ __meta__ = {
 [node name="DCCheck" type="CheckBox" parent="Panel/TabContainer/Nyoom/Panel"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -360.0
-margin_right = -227.0
+margin_left = -146.0
+margin_right = -13.0
 margin_bottom = 29.0
 text = "Direct Connect"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="DLCheck" type="CheckBox" parent="Panel/TabContainer/Nyoom/Panel"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -220.0
-margin_right = -12.0
-margin_bottom = 29.0
-text = "Do not Download addons"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -532,6 +520,7 @@ text = "Exit"
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
 
 [node name="DownloadDialog" parent="." instance=ExtResource( 10 )]
+visible = false
 margin_top = 72.0
 margin_right = -25.0
 margin_bottom = -152.0
