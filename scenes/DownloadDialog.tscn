@@ -1,0 +1,162 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://themes/BlueMetal.theme" type="Theme" id=1]
+[ext_resource path="res://scenes/DownloadDialog.gd" type="Script" id=2]
+[ext_resource path="res://themes/resources/header.tres" type="DynamicFont" id=3]
+
+[node name="DownloadDialog" type="WindowDialog"]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_top = 40.0
+margin_right = -22.0
+margin_bottom = -176.0
+rect_pivot_offset = Vector2( 112, 168 )
+theme = ExtResource( 1 )
+window_title = "Download SRB2Kart"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 9.0
+margin_right = -10.0
+margin_bottom = 89.0
+bbcode_enabled = true
+bbcode_text = "Nyoom Launcher can download SRB2Kart for you.
+The following downloads come from official source for each, respectively. Nyoom Launcher, however, isn't in control of these and isn't responcible for downloads failing because of change of location."
+text = "Nyoom Launcher can download SRB2Kart for you.
+The following downloads come from official source for each, respectively. Nyoom Launcher, however, isn't in control of these and isn't responcible for downloads failing because of change of location."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocationLineEdit" type="LineEdit" parent="."]
+margin_left = 8.0
+margin_top = 161.0
+margin_right = 464.0
+margin_bottom = 185.0
+placeholder_text = "Please put in any folder directory."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LocBrowseButton" type="Button" parent="."]
+anchor_left = -0.00361011
+anchor_top = 0.078125
+anchor_right = -0.00361011
+anchor_bottom = 0.078125
+margin_left = 474.0
+margin_top = 131.0
+margin_right = 538.0
+margin_bottom = 155.0
+text = "Browse"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="DownloadHeader" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 89.0
+margin_right = 238.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 3 )
+text = "Download Location"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoeHeader" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 192.0
+margin_right = 186.0
+margin_bottom = 224.0
+custom_fonts/font = ExtResource( 3 )
+text = "SRB2Kart-Moe"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoeLabel" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 8.0
+margin_top = 221.0
+margin_right = -12.0
+margin_bottom = 301.0
+bbcode_enabled = true
+bbcode_text = "SRB2Kart-Moe is the Moe Mansion build of SRB2Kart.  It contains many improvements to stability, game-feel, and aesthetic. This is NOT an official build, and isn't offiliated with Kart Krew. [url=https://mb.srb2.org/threads/srb2kart-1-3-moe-mansion.29473/]Check out the official forum post[/url]"
+text = "SRB2Kart-Moe is the Moe Mansion build of SRB2Kart.  It contains many improvements to stability, game-feel, and aesthetic. This is NOT an official build, and isn't offiliated with Kart Krew. Check out the official forum post"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoeLabel2" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+margin_left = 10.0
+margin_top = 121.0
+margin_right = -10.0
+margin_bottom = 161.0
+bbcode_enabled = true
+bbcode_text = "If you're on Windows, please make sure to COPY THIS LOCATION so you can paste it into the installer."
+text = "If you're on Windows, please make sure to COPY THIS LOCATION so you can paste it into the installer."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MoeCheck" type="CheckBox" parent="."]
+margin_left = 8.0
+margin_top = 304.0
+margin_right = 217.0
+margin_bottom = 323.0
+text = "Download SRB2Kart-Moe"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DownloadButton" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 328.0
+margin_right = 83.0
+margin_bottom = 347.0
+text = "Download"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = 8.0
+margin_top = 352.0
+margin_right = 538.0
+margin_bottom = 371.0
+max_value = 4.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ProgressBar"]
+margin_left = 2.0
+margin_right = 532.0
+margin_bottom = 19.0
+text = "..."
+align = 1
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_right = 542.0
+margin_bottom = 536.0
+window_title = "Open a Directory"
+mode = 2
+access = 2
+current_dir = "/"
+current_path = "/"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="LocBrowseButton" to="." method="_on_LocBrowseButton_pressed"]
+[connection signal="pressed" from="DownloadButton" to="." method="_on_DownloadButton_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]

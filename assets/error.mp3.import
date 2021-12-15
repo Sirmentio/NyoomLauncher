@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/error.mp3-c76820494cd8bebd35b10712669d3d11.mp3str"
+
+[deps]
+
+source_file="res://assets/error.mp3"
+dest_files=[ "res://.import/error.mp3-c76820494cd8bebd35b10712669d3d11.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ping.mp3-21964c0b2b72f6ab9431d24e1128205c.mp3str"
+
+[deps]
+
+source_file="res://assets/ping.mp3"
+dest_files=[ "res://.import/ping.mp3-21964c0b2b72f6ab9431d24e1128205c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

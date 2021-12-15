@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/whreee.mp3-c6c5b0f5aca14cc406a89c63f890bf45.mp3str"
+
+[deps]
+
+source_file="res://assets/whreee.mp3"
+dest_files=[ "res://.import/whreee.mp3-c6c5b0f5aca14cc406a89c63f890bf45.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
