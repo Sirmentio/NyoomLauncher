@@ -27,10 +27,10 @@ Just slap the executable and packed assets anywhere, in a separate folder, in SR
 By the way, haven't tested on Linux... So keep that in mind.
 
 # TODO
-[ ] Full Linux download support.
-- Flathub, maybe?
-[ ] Multiple themes
-[ ] Addon list saving, loading, editing, etc... 
+- [ ] Full Linux download support.
+ - Flathub, maybe?
+- [ ] Multiple themes
+- [ ] Addon list saving, loading, editing, etc... 
 
 # License
 See [LICENSE](LICENSE) file for the license.
