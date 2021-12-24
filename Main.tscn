@@ -321,6 +321,7 @@ margin_left = 8.0
 margin_top = 131.0
 margin_right = -8.0
 margin_bottom = 307.0
+rect_pivot_offset = Vector2( -395, 100 )
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -391,6 +392,64 @@ margin_top = 499.0
 margin_right = 48.0
 margin_bottom = 518.0
 text = "Open data directory..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OtherPanel" type="Panel" parent="Panel/TabContainer/Settings"]
+anchor_right = 1.0
+margin_left = 8.0
+margin_top = 313.0
+margin_right = -8.0
+margin_bottom = 489.0
+rect_pivot_offset = Vector2( -395, 100 )
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroCheck" type="CheckBox" parent="Panel/TabContainer/Settings/OtherPanel"]
+margin_left = 8.0
+margin_top = 15.0
+margin_bottom = 34.0
+rect_pivot_offset = Vector2( -2, 50 )
+text = "Skip Intro"
+flat = true
+
+[node name="HomeCheck" type="CheckBox" parent="Panel/TabContainer/Settings/OtherPanel"]
+margin_left = 8.0
+margin_top = 40.0
+margin_right = 135.0
+margin_bottom = 59.0
+rect_pivot_offset = Vector2( -2, 50 )
+text = "Custom HOME"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeLineEdit" type="LineEdit" parent="Panel/TabContainer/Settings/OtherPanel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = -111.0
+margin_right = -95.0
+margin_bottom = -87.0
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeBrowseButton" type="Button" parent="Panel/TabContainer/Settings/OtherPanel/HomeLineEdit"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -25.0
+margin_right = 87.0
+text = "Browse"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -553,6 +612,8 @@ __meta__ = {
 [connection signal="item_selected" from="Panel/TabContainer/Settings/DisplayPanel/FullscreenOptions" to="." method="_on_DisplaySettings_changed"]
 [connection signal="item_selected" from="Panel/TabContainer/Settings/DisplayPanel/RenderOptions" to="." method="_on_DisplaySettings_changed"]
 [connection signal="pressed" from="Panel/TabContainer/Settings/Button" to="." method="_on_Button_pressed"]
+[connection signal="toggled" from="Panel/TabContainer/Settings/OtherPanel/HomeCheck" to="." method="_on_HomeCheck_toggled"]
+[connection signal="pressed" from="Panel/TabContainer/Settings/OtherPanel/HomeLineEdit/HomeBrowseButton" to="." method="_on_HomeBrowseButton_pressed"]
 [connection signal="pressed" from="Panel/TabContainer/About/ColorRect/SPButton" to="Panel/TabContainer/About/ColorRect/SPButton" method="_on_SPButton_pressed"]
 [connection signal="pressed" from="Panel/HSplitContainer/LaunchButton" to="." method="_on_LaunchButton_pressed"]
 [connection signal="pressed" from="Panel/HSplitContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
