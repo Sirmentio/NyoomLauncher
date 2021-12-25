@@ -584,13 +584,27 @@ margin_top = 72.0
 margin_right = -25.0
 margin_bottom = -152.0
 
+[node name="HomeDialog" type="FileDialog" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 144.0
+rect_min_size = Vector2( 150, 52.5 )
+window_title = "Open a Directory"
+dialog_text = "Choose a Folder to set as HOME"
+dialog_hide_on_ok = true
+mode = 2
+access = 2
+current_dir = "/"
+current_path = "/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ExecDialog" type="FileDialog" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 32.0
 margin_top = 144.0
-margin_right = -32.0
-margin_bottom = -64.0
+rect_min_size = Vector2( 150, 52.5 )
 window_title = "Open a File"
 dialog_text = "Choose the SRB2Kart(moe) executable."
 dialog_hide_on_ok = true
@@ -618,4 +632,5 @@ __meta__ = {
 [connection signal="pressed" from="Panel/HSplitContainer/LaunchButton" to="." method="_on_LaunchButton_pressed"]
 [connection signal="pressed" from="Panel/HSplitContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="finished_everything" from="DownloadDialog" to="." method="_on_DownloadDialog_finished_everything"]
+[connection signal="dir_selected" from="HomeDialog" to="." method="_on_HomeDialog_dir_selected"]
 [connection signal="file_selected" from="ExecDialog" to="." method="_on_ExecDialog_file_selected"]

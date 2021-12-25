@@ -183,7 +183,14 @@ func _on_DownloadDialog_finished_everything(location):
 
 func _on_HomeCheck_toggled(button_pressed):
 	if button_pressed == true:
-		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.editable = true
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.set_editable(true)
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit/HomeBrowseButton.set_disabled(false)
 	else:
-		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.editable = false
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.set_editable(false)
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit/HomeBrowseButton.set_disabled(true)
 
+func _on_HomeBrowseButton_pressed():
+	$HomeDialog.popup()
+
+func _on_HomeDialog_dir_selected(dir):
+	$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.set_text(dir)
