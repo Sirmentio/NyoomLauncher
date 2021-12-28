@@ -43,6 +43,12 @@ func load_data():
 			FullscreenOptions.selected = data["FullscreenMode"]
 		if data.has("RenderMode"):
 			RenderOptions.selected = data["RenderMode"]
+		if data.has("SkipIntro"):
+			$Panel/TabContainer/Settings/OtherPanel/IntroCheck.pressed = data["SkipIntro"]
+		if data.has("HomeCheck"):
+			$Panel/TabContainer/Settings/OtherPanel/HomeCheck.pressed = data["HomeCheck"]
+		if data.has("Home"):
+			$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text = data["Home"]
 		file.close()
 
 func save_data():
@@ -56,6 +62,9 @@ func save_data():
 	data["Nickname"] = $Panel/TabContainer/Nyoom/Panel/NicknameLineEdit.text
 	data["FullscreenMode"] = $Panel/TabContainer/Settings/DisplayPanel/FullscreenOptions.selected
 	data["RenderMode"] = $Panel/TabContainer/Settings/DisplayPanel/RenderOptions.selected
+	data["SkipIntro"] = $Panel/TabContainer/Settings/OtherPanel/IntroCheck.pressed
+	data["HomeCheck"] = $Panel/TabContainer/Settings/OtherPanel/HomeCheck.pressed
+	data["Home"] = $Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text
 	file.store_var(data)
 	file.close()
 
@@ -75,10 +84,10 @@ func _on_LaunchButton_pressed():
 			$Dialog.error("The designated executable couldn't be found. Please select a valid SRB2Kart executable. ")
 		return
 	start_game()
-	
+
 
 func start_game():
-	var args = []
+	var args = PoolStringArray([])
 	if ServerLineEdit.text != "" and DirectConnectCheck.pressed:
 		args.append("-connect")
 		args.append(ServerLineEdit.text)
@@ -110,7 +119,11 @@ func start_game():
 			args.append(OS.get_screen_size().x)
 			args.append("-height")
 			args.append(OS.get_screen_size().y)
-	args = PoolStringArray(args)
+	if $Panel/TabContainer/Settings/OtherPanel/IntroCheck.pressed:
+		args.append("-skipintro")
+	if $Panel/TabContainer/Settings/OtherPanel/HomeCheck.pressed and $Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text != "":
+			args.append("-home")
+			args.append($Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text)
 	print(ExecLineEdit.text + String(args))
 	OS.execute(ExecLineEdit.text, args, false)
 
@@ -166,3 +179,18 @@ func _on_DownloadButton_pressed():
 
 func _on_DownloadDialog_finished_everything(location):
 	ExecLineEdit.text = location
+
+
+func _on_HomeCheck_toggled(button_pressed):
+	if button_pressed == true:
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.set_editable(true)
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit/HomeBrowseButton.set_disabled(false)
+	else:
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.set_editable(false)
+		$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit/HomeBrowseButton.set_disabled(true)
+
+func _on_HomeBrowseButton_pressed():
+	$HomeDialog.popup()
+
+func _on_HomeDialog_dir_selected(dir):
+	$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.set_text(dir)
