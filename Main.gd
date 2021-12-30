@@ -1,11 +1,5 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 onready var ServerLineEdit = get_node("Panel/TabContainer/Nyoom/Panel/ServerLineEdit")
 onready var ServerList = get_node("Panel/TabContainer/Nyoom/Panel/ServerList")
 onready var DirectConnectCheck = get_node("Panel/TabContainer/Nyoom/Panel/DCCheck")
@@ -20,6 +14,12 @@ onready var RenderOptions = get_node("Panel/TabContainer/Settings/DisplayPanel/R
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if OS.get_name() == "X11":
+		$Panel/TabContainer/Settings/ExecPanel/InfoLabel.set_text("Select a valid SRB2Kart executable here. For Linux users, use an AppImage.")
+		$ExecDialog.set_filters(PoolStringArray(["*.appimage"]))
+		$ExecDialog.set_current_file("srb2kart")
+		$ExecDialog.set_current_path("/srb2kart")
+		
 	load_data()
 	pass # Replace with function body.
 

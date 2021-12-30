@@ -1,11 +1,5 @@
 extends Label
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -24,7 +18,7 @@ func build_label(fs, ren):
 		0:
 			self.text += "Software mode is compatible with most older hardware, at the expense of extra visual flair."
 		1:
-			self.text += "OpenGL allows for 3D model rendering, at the expense of some bugs and quirks."
+			self.text += "OpenGL allows for 3D model rendering and better performance, at the expense of some bugs and quirks."
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

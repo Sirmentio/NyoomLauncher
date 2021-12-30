@@ -309,7 +309,7 @@ margin_left = 8.0
 margin_top = 32.0
 margin_right = 568.0
 margin_bottom = 73.0
-text = "Select a valid SRB2Kart executable here. For Linux users, use an appimage."
+text = "Select a valid SRB2Kart executable here."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -610,7 +610,7 @@ dialog_text = "Choose the SRB2Kart(moe) executable."
 dialog_hide_on_ok = true
 mode = 0
 access = 2
-filters = PoolStringArray( "*.exe", "*.appimage" )
+filters = PoolStringArray( "*.exe" )
 current_dir = "/"
 current_file = "srb2kart.exe"
 current_path = "/srb2kart.exe"
