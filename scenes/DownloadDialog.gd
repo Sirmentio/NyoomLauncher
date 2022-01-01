@@ -107,7 +107,7 @@ func download(loc, moe, step):
 			# done
 			Progress.value = 4
 			ProgressLabel.text = "Done."
-			emit_signal("finished_everything", $LocationLineEdit.text+ _request.download_file)
+			emit_signal("finished_everything", _request.download_file)
 			$DownloadButton.disabled = false
 		return
 
