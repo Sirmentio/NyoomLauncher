@@ -11,6 +11,8 @@ onready var FullscreenOptions = get_node("Panel/TabContainer/Settings/DisplayPan
 onready var RenderOptions = get_node("Panel/TabContainer/Settings/DisplayPanel/RenderOptions")
 # 0 - Software (Default)
 # 1 - OpenGL
+onready var CustomParameters = get_node("Panel/TabContainer/Settings/OtherPanel/ParameterTextEdit")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,12 +44,8 @@ func load_data():
 			FullscreenOptions.selected = data["FullscreenMode"]
 		if data.has("RenderMode"):
 			RenderOptions.selected = data["RenderMode"]
-		if data.has("SkipIntro"):
-			$Panel/TabContainer/Settings/OtherPanel/IntroCheck.pressed = data["SkipIntro"]
-		if data.has("HomeCheck"):
-			$Panel/TabContainer/Settings/OtherPanel/HomeCheck.pressed = data["HomeCheck"]
-		if data.has("Home"):
-			$Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text = data["Home"]
+		if data.has("CustomParameters"):
+			CustomParameters.text = data["CustomParameters"]
 		file.close()
 
 func save_data():
@@ -61,9 +59,7 @@ func save_data():
 	data["Nickname"] = $Panel/TabContainer/Nyoom/Panel/NicknameLineEdit.text
 	data["FullscreenMode"] = $Panel/TabContainer/Settings/DisplayPanel/FullscreenOptions.selected
 	data["RenderMode"] = $Panel/TabContainer/Settings/DisplayPanel/RenderOptions.selected
-	data["SkipIntro"] = $Panel/TabContainer/Settings/OtherPanel/IntroCheck.pressed
-	data["HomeCheck"] = $Panel/TabContainer/Settings/OtherPanel/HomeCheck.pressed
-	data["Home"] = $Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text
+	data["CustomParameters"] = CustomParameters.text
 	file.store_var(data)
 	file.close()
 
@@ -118,11 +114,10 @@ func start_game():
 			args.append(OS.get_screen_size().x)
 			args.append("-height")
 			args.append(OS.get_screen_size().y)
-	if $Panel/TabContainer/Settings/OtherPanel/IntroCheck.pressed:
-		args.append("-skipintro")
-	if $Panel/TabContainer/Settings/OtherPanel/HomeCheck.pressed and $Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text != "":
-			args.append("-home")
-			args.append($Panel/TabContainer/Settings/OtherPanel/HomeLineEdit.text)
+	if CustomParameters.text != "":
+		for line in CustomParameters.get_parameters():
+			if !line.begins_with("#"):
+				args.append(line)
 	print(ExecLineEdit.text + String(args))
 	OS.execute(ExecLineEdit.text, args, false)
 
