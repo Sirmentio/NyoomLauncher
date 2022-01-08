@@ -137,7 +137,6 @@ __meta__ = {
 }
 
 [node name="Multiplayer" type="Control" parent="Panel/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 29.0
@@ -533,6 +532,7 @@ __meta__ = {
 }
 
 [node name="About" type="Control" parent="Panel/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 29.0
@@ -650,7 +650,6 @@ text = "Exit"
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
 
 [node name="DownloadDialog" parent="." instance=ExtResource( 10 )]
-visible = false
 margin_top = 72.0
 margin_right = -25.0
 margin_bottom = -152.0
@@ -698,7 +697,7 @@ window_title = "Open File(s)"
 dialog_hide_on_ok = true
 mode = 1
 access = 2
-filters = PoolStringArray( "*.pk3", "*.wad", "*.lua" )
+filters = PoolStringArray( "*.pk3", "*.wad", "*.lua", "*.soc" )
 current_dir = "/"
 current_path = "/"
 __meta__ = {
