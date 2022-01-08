@@ -28,8 +28,8 @@ By the way, haven't tested on Linux... So keep that in mind.
 
 # TODO
 - [x] Full Linux download support.
-- [ ] Multiple themes
-- [ ] Addon list saving, loading, editing, etc... 
+- [x] Addon list saving, loading, editing, etc... 
+- [ ] Multiple themes?
 
 # License
 See [LICENSE](LICENSE) file for the license.
