@@ -240,6 +240,7 @@ margin_bottom = -13.0
 text = "Nickname"
 
 [node name="Addons" type="Control" parent="Panel/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 29.0
@@ -532,7 +533,6 @@ __meta__ = {
 }
 
 [node name="About" type="Control" parent="Panel/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 29.0
@@ -590,21 +590,15 @@ bbcode_enabled = true
 bbcode_text = "Nyoom Launcher is a ... Launcher, for Sonic Robo Blast 2 Kart.
 I at first made this in PyQt5 but the libraries were huge as heck, as well as the fact that the ways I had to package it just made the program itself unstable.. I wanted to make it in Java but that also didn't work out. So now...
 
-Nyoom Launcher is built on the Godot Engine.
+Nyoom Launcher is built on the Godot Engine, licensed under MIT. Thanks to everyone who've contributed and shared their interest!
 
-
-
-
-stop looking at me"
+Github: [url]https://github.com/Sirmentio/NyoomLauncher/[/url]"
 text = "Nyoom Launcher is a ... Launcher, for Sonic Robo Blast 2 Kart.
 I at first made this in PyQt5 but the libraries were huge as heck, as well as the fact that the ways I had to package it just made the program itself unstable.. I wanted to make it in Java but that also didn't work out. So now...
 
-Nyoom Launcher is built on the Godot Engine.
+Nyoom Launcher is built on the Godot Engine, licensed under MIT. Thanks to everyone who've contributed and shared their interest!
 
-
-
-
-stop looking at me"
+Github: https://github.com/Sirmentio/NyoomLauncher/"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -612,14 +606,14 @@ __meta__ = {
 [node name="RichTextLabel2" type="RichTextLabel" parent="Panel/TabContainer/About"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -92.0
+margin_left = -278.0
 margin_top = 75.0
-margin_right = 57.0
+margin_right = 279.0
 margin_bottom = 107.0
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[rainbow freq=0.2][wave amp=50 freq=6]0.3 ALPHA[/wave][/rainbow]"
-text = "0.3 ALPHA"
+bbcode_text = "[center]Version 1.0[/center]"
+text = "Version 1.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
