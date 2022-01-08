@@ -612,8 +612,8 @@ margin_right = 279.0
 margin_bottom = 107.0
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]Version 1.0.0[/center]"
-text = "Version 1.0.0"
+bbcode_text = "[center]Version 1.0.1[/center]"
+text = "Version 1.0.1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
