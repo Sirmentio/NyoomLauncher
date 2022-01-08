@@ -4,9 +4,7 @@
 [ext_resource path="res://scenes/DownloadDialog.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/header.tres" type="DynamicFont" id=3]
 
-
 [node name="DownloadDialog" type="WindowDialog"]
-visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 24.0
