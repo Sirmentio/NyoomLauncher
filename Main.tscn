@@ -240,7 +240,6 @@ margin_bottom = -13.0
 text = "Nickname"
 
 [node name="Settings" type="Control" parent="Panel/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 29.0
@@ -431,6 +430,8 @@ margin_left = 8.0
 margin_top = 34.0
 margin_right = 559.0
 margin_bottom = 173.0
+text = "# This box is run after everything else.
+# Comments like these, obviously, are ignored."
 syntax_highlighting = true
 show_line_numbers = true
 script = ExtResource( 11 )
@@ -439,6 +440,7 @@ __meta__ = {
 }
 
 [node name="About" type="Control" parent="Panel/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 29.0
