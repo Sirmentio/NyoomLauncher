@@ -2,7 +2,8 @@
 
 [ext_resource path="res://themes/BlueMetal.theme" type="Theme" id=1]
 [ext_resource path="res://scenes/DownloadDialog.gd" type="Script" id=2]
-[ext_resource path="res://themes/resources/header.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/header.tres" type="DynamicFont" id=3]
+
 
 [node name="DownloadDialog" type="WindowDialog"]
 visible = true
