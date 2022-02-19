@@ -203,7 +203,17 @@ func _on_HomeDialog_dir_selected(dir):
 
 
 func _on_AddonAddButton_pressed():
-	$AddonDialog.current_path = ExecLineEdit.text
+	if OS.get_name() == "X11": # linux's content folder is separate from the executable, so lest search for that.
+		# start in ~/.srb2kart or HOME if it doesnt exist
+		$AddonDialog.current_path = OS.get_environment("HOME")+"/" 
+		$AddonDialog.current_path = OS.get_environment("HOME")+"/.srb2kart/"
+		# search home if set
+		if CustomParameters.text != "":
+			for line in CustomParameters.get_parameters():
+				if line.begins_with("-home"):
+					$AddonDialog.current_path = line.right(6)+"/.srb2kart/"
+	else:
+		$AddonDialog.current_path = ExecLineEdit.text
 	$AddonDialog.current_file = ""
 	$AddonDialog.popup()
 	pass # Replace with function body.
