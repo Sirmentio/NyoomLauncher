@@ -104,10 +104,6 @@ func start_game():
 	match $Panel/TabContainer/Settings/DisplayPanel/FullscreenOptions.selected:
 		0:
 			args.append("-win")
-			args.append("-width")
-			args.append("1280")
-			args.append("-height")
-			args.append("800")
 		1:
 			args.append("+fullscreen 1")
 			args.append("-width")
